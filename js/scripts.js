@@ -71,6 +71,7 @@ $(document).ready(function() {
       });
 
     } else {
+
       // DESKTOP ONLY
 
       $('#fullpage').fullpage({
@@ -230,12 +231,9 @@ $(document).ready(function() {
     $('body video').each(function() {
       this.pause();
     });
-    $('body audio').each(function() {
-      $(this).animate({
-        volume: 0
-      }, 1000, function() {
-        muted = true;
-      });
+    $('.section.active audio').each(function() {
+      this.pause();
+      muted = true;
     });
     videoPaused = true;
     play.playSegments([
@@ -259,12 +257,9 @@ $(document).ready(function() {
 
   function checkMute() {
     if (audioMuted != true) {
-      $('body audio').each(function() {
-        $(this).animate({
-          volume: 1
-        }, 1000, function() {
-          muted = false;
-        });
+      $('.section.active audio').each(function() {
+        this.play();
+        muted = false;
       });
     }
   }
@@ -309,14 +304,8 @@ $(document).ready(function() {
       info.playSegments([
         [30, 60]
       ], true);
-    }
-    $('body audio').each(function() {
-      $(this).animate({
-        volume: 1
-      }, 1000, function() {
-        muted = false;
-      });
-    });
+    };
+    checkMute();
   });
 
   // GO FORWARD A SLIDE
@@ -345,14 +334,8 @@ $(document).ready(function() {
       info.playSegments([
         [30, 60]
       ], true);
-    }
-    $('body audio').each(function() {
-      $(this).animate({
-        volume: 1
-      }, 1000, function() {
-        muted = false;
-      });
-    });
+    };
+    checkMute();
   });
 
 
