@@ -1,0 +1,1070 @@
+html, body, #fullpage, .section {
+    height: 100%;
+}
+
+body {
+  background: #302D2D;
+  color: white;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  font-smooth: always;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* TYPE */
+
+h1, h2 {
+  position: absolute;
+  left: 44px;
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: 0.75px;
+}
+
+h1 {
+  top: 20px;
+  z-index: 999;
+  font-size: 26px;
+}
+
+h1 a {
+  color: white;
+  text-decoration: none;
+}
+
+h2 {
+  bottom: 20px;
+}
+
+h2 a {
+  color: white;
+  text-decoration: none;
+  transition: .3s ease-in-out all;
+  padding-bottom: 2px;
+  border-bottom: 2px rgba(255,255,255,0) solid;
+}
+
+h2 a:hover {
+  border-bottom: 2px rgba(255,255,255,1) solid;
+}
+
+header {
+  z-index: 9;
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  left: 0;
+  top: 0;
+  margin: 0;
+  transition: .4s ease-in-out;
+}
+
+h3 {
+  font-size: 14px;
+  position: absolute;
+  top: 70px;
+  left: 44px;
+  z-index: 999;
+  letter-spacing: .5px;
+  font-weight: 500;
+  opacity: 0;
+  transition: .5s ease-in-out;
+  pointer-events: none;
+}
+
+h3 a {
+  color: white;
+  text-decoration: none;
+  border-bottom: solid white 1px;
+  transition: .2s;
+}
+
+h3 a:hover {
+  padding-bottom: 2px;
+}
+
+/* LAYOUT */
+
+.section {
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+	overflow: hidden;
+}
+
+.fullpage-wrapper {
+	width: 100%!important;
+	transform: none!important;
+}
+
+.fp-section {
+	width: 100%!important;
+	position: absolute;
+	left: 0;
+	top: 0;
+	visibility: hidden;
+	opacity: 0;
+	z-index: 0;
+  transition: opacity .4s ease-in-out;
+}
+
+.fp-section.active {
+	visibility: visible;
+	opacity: 1;
+	z-index: 1;
+}
+
+.section .album {
+  width: 65vh;
+  height: 65vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -32.5vh;
+  z-index: 99;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.section .album video {
+  width: 65.2vh;
+  height: 65.2vh;
+}
+
+#albumMockup {
+  position: absolute;
+  background: url('media/mockup.png');
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 178vh;
+  background-size: contain;
+  top: 50%;
+  left: 50%;
+  margin: -50.1vh -88.9vh;
+  z-index: 999;
+  pointer-events: none;
+}
+
+.vinyl {
+  background: url('media/vinyl.png');
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 178vw;
+  background-size: contain;
+  top: 50%;
+  left: 50%;
+  margin: -50vh -89vh;
+  z-index: 0;
+  position: absolute;
+  transition-delay: .4s;
+  pointer-events: none;
+}
+
+/* NAV */
+
+nav {
+  position: absolute;
+  left: 44px;
+  top: 50%;
+  height: 260px;
+  margin-top: -130px;
+  width: 25px;
+  z-index: 999;
+  transition: all .3s ease-in-out;
+}
+
+nav li {
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin-bottom: 24px;
+  list-style-type: none;
+  transition: all .3s ease-in-out;
+  position: relative;
+}
+
+nav:hover {
+  height: 60vh;
+  width: 6vh;
+  margin-top: -30vh;
+}
+nav:hover li {
+  width: 5vh;
+  height: 5vh;
+  margin-bottom: 5px;
+  overflow: visible;
+  position: relative;
+  box-shadow: 0 0 30px 0px rgba(0,0,0,.15);
+}
+
+nav:hover .mogwaiNav {
+  background: url('media/covers/mogwai.jpg');
+}
+nav:hover .odeszaNav {
+  background: url('media/covers/odesza.jpg');
+}
+nav:hover .vinceNav {
+  background: url('media/covers/vince.jpg');
+}
+nav:hover .brandnewNav {
+  background: url('media/covers/brandnew.jpg')
+}
+nav:hover .dannybrownNav {
+  background: url('media/covers/dannybrown.jpg');
+}
+nav:hover .pinkfloydNav {
+  background: url('media/covers/pinkfloyd.jpg');
+}
+nav:hover .sunsofthymeNav {
+  background: url('media/covers/sunsofthyme.jpg');
+}
+nav:hover .radicalfaceNav {
+  background: url('media/covers/radicalface.jpg')
+}
+nav:hover .pupNav {
+  background: url('media/covers/pup.jpg');
+}
+nav:hover .twdyNav {
+  background: url('media/covers/thiswilldestroyyou.jpg');
+}
+
+.album, #albumMockup {
+  transition: all .4s ease-in-out, opacity 0s;
+}
+body.navActive .album, body.navActive #albumMockup{
+  transform: translate(14vh);
+}
+body.navActive .vinyl {
+  margin: -50vh -75vh!important;
+}
+
+nav:hover .mogwaiNav, nav:hover .odeszaNav, nav:hover .vinceNav, nav:hover .brandnewNav, nav:hover .dannybrownNav, nav:hover .pinkfloydNav, nav:hover .sunsofthymeNav, nav:hover .radicalfaceNav, nav:hover .pupNav,  nav:hover .twdyNav {
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+nav li span {
+  opacity: 0;
+  position: absolute;
+  height: calc(5vh + 10px);
+  line-height: calc(5vh + 10px);
+  left: -4vh;
+  top: -30px;
+  padding-left: 6vh;
+  margin: 0;
+  vertical-align: middle;
+  color: white;
+  padding-right: 30px;
+  width: auto;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: all .3s ease-in-out;
+  transition: opacity .5s ease-in-out;
+}
+
+nav:hover li:hover {
+  margin-left: 13px;
+}
+
+nav:hover li:not(:hover) {
+  margin-left: 0px!important;
+}
+
+nav:hover li span {
+  top: -5px;
+  left: 0px;
+  pointer-events: all;
+}
+
+nav:hover li:hover span {
+  opacity: 1;
+}
+
+.fp-viewing-odesza nav .odeszaNav, .fp-viewing-mogwai nav .mogwaiNav, .fp-viewing-vince nav .vinceNav, .fp-viewing-brandnew nav .brandnewNav, .fp-viewing-dannybrown nav .dannybrownNav, .fp-viewing-pinkfloyd nav .pinkfloydNav, .fp-viewing-sunsofthyme nav .sunsofthymeNav, .fp-viewing-radicalface nav .radicalfaceNav, .fp-viewing-pup nav .pupNav, .fp-viewing-thiswilldestroyyou nav .twdyNav {
+  margin-left: 13px;
+}
+
+/* CONTROLS */
+
+.control {
+  cursor: pointer;
+  position: absolute;
+}
+
+.sound {
+
+}
+
+#mute {
+  z-index: 999;
+  top: 25px;
+  right: 44px;
+  width: 50px;
+  height: 50px;
+  z-index: 999;
+}
+
+#unmute {
+  top: 25px;
+  right: 44px;
+  width: 50px;
+  height: 50px;
+  z-index: 99;
+}
+
+#muteIcon {
+  z-index: 99;
+}
+
+#prev {
+  width: 35px;
+  height: 35px;
+  right: 150px;
+  bottom: 35px;
+  z-index: 99999;
+}
+
+#pause {
+  right: 75px;
+  bottom: 13px;
+  width: 84px;
+  height: 84px;
+  z-index: 9999;
+}
+
+#play {
+  right: 75px;
+  bottom: 13px;
+  width: 84px;
+  height: 84px;
+  z-index: 999;
+}
+
+#next {
+  width: 35px;
+  height: 35px;
+  right: 45px;
+  bottom: 35px;
+  z-index: 99999;
+}
+
+#info, #closeInfo {
+  width: 30px;
+  height: 30px;
+  top: 35px;
+  left: 280px;
+  z-index: 9999;
+  cursor: pointer!important;
+}
+
+#closeInfo {
+  z-index: 999;
+}
+
+#closeInfo.active {
+  display: inline;
+  z-index: 99999;
+}
+
+#mobileNext, #mobilePrev {
+  display: none;
+}
+
+/* CREDITS */
+
+header h1 a img {
+  position: absolute;
+  right: -28px;
+  top: 1px;
+}
+
+#credits {
+  opacity: 0;
+  height: 200px;
+  overflow: hidden;
+  margin: 110px 44px;
+  transition: .4s ease-in-out;
+  column-count: 5;
+  column-gap: 0vw;
+  padding: 0;
+  pointer-events: none;
+}
+
+ul#credits li {
+  list-style-type: none;
+  line-height: 36px;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+ul#credits li a {
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px solid white;
+  transition: .2s ease-in-out;
+}
+
+ul#credits li:hover a {
+  padding-bottom: 3px;
+}
+
+ul#credits, header h3 {
+  transform: translateY(-25px);
+  transition: .3s ease-in-out;
+}
+
+body.creditsOpen ul#credits, body.creditsOpen header h3 {
+  transform: translateY(0);
+}
+
+body.creditsOpen #credits {
+  opacity: 1;
+  height: 200px;
+  pointer-events: all;
+}
+
+body.creditsOpen header {
+  width: 100%;
+}
+
+body.creditsOpen header h3 {
+  opacity: 1;
+  pointer-events: all;
+}
+
+body.creditsOpen nav {
+  transform: translateY(7.5vh);
+}
+
+body.creditsOpen .album, body.creditsOpen #albumMockup, body.creditsOpen .vinyl  {
+  transform: translateY(10vh) scale(.75);
+  transition: .4s ease-in-out!important;
+}
+
+body.creditsOpen .vinyl {
+  transform: translate(-13vw, 10vh) scale(.75);
+}
+
+/* THE ALBUMS */
+
+body {transition: background-color 1s ease-in-out;}
+#mogwaii .album, .fp-viewing-mogwai {
+  background: #C50138;
+}
+
+#odeszaa .album, .fp-viewing-odesza {
+  background: #EA4B4B;
+}
+
+#vincee .album, .fp-viewing-vince {
+  background: #C7D2CA;
+}
+
+#brandneww .album, .fp-viewing-brandnew {
+  background: #4E8C90;
+}
+
+#dannybrownn .album, .fp-viewing-dannybrown {
+  background: #C8A36D;
+  animation: colorchange 1s infinite;
+}
+
+@keyframes colorchange
+{
+  0%   {background: #C8A36D;}
+  33%  {background: #A0B277;}
+  66%  {background: #919B97;}
+  100% {background: #C8A36D;}
+}
+
+
+#pinkfloydd .album, .fp-viewing-pinkfloyd {
+  background: #BBDFE6;
+}
+
+#radicalfacee .album, .fp-viewing-radicalface {
+  background: #F7D4AE;
+}
+
+#sunsofthymee .album, .fp-viewing-sunsofthyme {
+  background: #965D47;
+}
+
+#pupp .album, .fp-viewing-pup {
+  background: #dacca2;
+}
+
+#thiswilldestroyyouu .album, .fp-viewing-thiswilldestroyyou {
+  background: #012c5b;;
+}
+
+#radicalfaceBirds {
+  width: 173vh;
+  height: 65vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -62.5vh -80vh;
+  z-index: 999;
+  background: none;
+  pointer-events: none;
+  opacity: 0;
+  transition: .5s ease-in-out all;
+}
+
+.webm {
+  display: inline;
+}
+
+.notwebm {
+  display: none;
+}
+
+#radicalfaceBirds video {
+  width: 100%;
+}
+
+#radicalfaceBirds img {
+  width: 100%;
+}
+
+/* SLIDE TRANSITIONS */
+
+.vinyl, .section.moveUp .vinyl, .section.moveDown .vinyl {
+  margin: -50vh -89vh;
+  transition: .5s ease-in-out;
+}
+
+.section.active .vinyl {
+  margin: -50vh -75vh;
+  transition: margin .5s ease-in-out .4s, transform .4s ease-in-out 0s;
+}
+
+.section .album video {
+  top: 0;
+  transition: transform .5s ease-in-out;
+  position: absolute;
+}
+
+
+.section.moveUp .album video {
+  transform: translateY(-65vh);
+}
+
+.section.moveDown .album video, .section .album video {
+  transform: translateY(65vh);
+}
+
+.section.active .album video {
+  transform: translateY(0vh);
+}
+
+.section.moveDown #radicalfaceBirds, #radicalfaceBirds {
+  margin: 2.5vh -80vh;
+}
+
+.section.moveUp #radicalfaceBirds {
+  margin: -127.5vh -80vh;
+  opacity: 0;
+}
+
+.section.active #radicalfaceBirds {
+  opacity: 1;
+  margin: -62.5vh -80vh;
+}
+
+body.navActive #radicalfaceBirds {
+  transform: translate(7vw);
+}
+
+/* MOBILE MODE */
+
+@media (max-width: 850px) {
+  .vinyl {
+    display: none;
+  }
+  .section .album {
+    margin: -32.5vh -30vh;
+  }
+  #albumMockup {
+    margin: -50.1vh -86.4vh;
+  }
+}
+
+@media (max-width: 1250px) {
+  body.creditsOpen #credits li {
+    font-size: 12px;
+  }
+}
+
+#burger {display: none;}
+
+/* iPhone 6 and below */
+
+@media (max-width: 480px) {
+
+  body {
+    height: 100vh;
+    overflow: hidden;
+  }
+  .fp-section {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .fp-section h2 {
+    opacity: 0;
+  }
+
+  .section.active h2 {
+    opacity: 1;
+  }
+
+  .section .album {
+    width: 75vw;
+    height: 75vw;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin: -37.5vw;
+    z-index: 99;
+    overflow: visible;
+  }
+
+
+  .section.active .album video {
+    left: 0;
+    top: 0;
+  }
+
+  .section .album video {
+    width: 100%;
+    height: 100%;
+    transform: translateY(0)!important;
+  }
+
+  #albumMockup {
+    display: none!important;
+  }
+
+  .album::after {
+    content: '';
+    width: 173.49%;
+    height: 308.54%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    margin: -66.9vw -27.7vw;
+    z-index: 99;
+    background-image: url('media/mockup-mobile.png');
+    background-size: 100%;
+  }
+
+  header {
+    width: 100vw;
+  }
+
+  #mute, #unmute, .vinyl, .divider {
+    display: none!important;
+  }
+
+  h1, h2 {
+    position: absolute;
+    left: 44px;
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+
+  h1 {
+    top: 15px;
+    left: 15px;
+  }
+
+  h2 {
+    bottom: 90px;
+    width: 100%;
+    text-align: center;
+    left: 0px;
+    font-size: 24px;
+  }
+
+  .albumName {
+    display: block;
+    font-weight: 300;
+    font-size: 20px;
+    margin-top: 6px;
+  }
+
+  h3 {
+    font-size: 14px;
+    position: absolute;
+    top: 74px;
+    left: 44px;
+  }
+
+  h3 a {
+    color: white;
+    text-decoration: none;
+    border-bottom: solid white 1px;
+  }
+
+  #pause, #play {
+    right: 50%;
+    margin-right: -49px;
+    bottom: 10px;
+    width: 100px;
+    height: 100px;
+  }
+
+  #prev {
+    right: 50%;
+    margin-right: 65px;
+    width: 40px;
+    height: 40px;
+    bottom: 40px;
+  }
+
+  #next {
+    right: 50%;
+    width: 40px;
+    height: 40px;
+    bottom: 40px;
+    margin-right: -110px;
+  }
+
+  #burger {
+    display: inline;
+    position: absolute;
+    top: 15px;
+    right: 5px;
+    height: 50px;
+    width: 50px;
+    z-index: 99990;
+  }
+
+  #close {
+    display: none;
+    position: absolute;
+    top: 15px;
+    right: 5px;
+    height: 50px;
+    width: 50px;
+    z-index: 9999;
+  }
+
+  #close.closeActive {
+    z-index: 99999;
+  }
+
+  #closeInfo {display: none!important;}
+
+  #mobileNext, #mobilePrev {
+    display: inline;
+    width: 10vw;
+    height: 70vw;
+    top: 25vw;
+    z-index: 99999;
+  }
+  #mobileNext { right: 0;}
+  #mobilePrev { left: 0;}
+
+  .section .album, .navActive .section .album {
+    transition: all .5s ease-in-out!important;
+    transform: scale(.666) translateX(97vw) translateY(0);
+  }
+
+  .section.moveUp .album, .navActive .section.moveUp .album,
+  .fp-viewing-pup #mogwaii .album,
+  .fp-viewing-thiswilldestroyyou #pupp .album,
+  .fp-viewing-odesza #thiswilldestroyyouu .album,
+  .fp-viewing-brandnew #odeszaa .album,
+  .fp-viewing-dannybrown #brandneww .album,
+  .fp-viewing-pinkfloyd #dannybrownn .album,
+  .fp-viewing-sunsofthyme #pinkfloydd .album,
+  .fp-viewing-radicalface #sunsofthymee .album,
+  .fp-viewing-vince #radicalfacee .album
+
+   {
+    transform: scale(.666) translateX(-97vw) translateY(0);
+  }
+
+  .section.moveDown .album, .navActive .section.moveDown .album,
+  .fp-viewing-pup #thiswilldestroyyouu .album,
+  .fp-viewing-thiswilldestroyyou #odeszaa .album,
+  .fp-viewing-odesza #brandneww .album,
+  .fp-viewing-brandnew #dannybrownn .album,
+  .fp-viewing-dannybrown #pinkfloydd .album,
+  .fp-viewing-pinkfloyd #sunsofthymee .album,
+  .fp-viewing-sunsofthyme #radicalfacee .album,
+  .fp-viewing-radicalface #vincee .album
+  {
+    transform: scale(.666) translateX(97vw) translateY(0);
+  }
+
+  .section.active .album, .navActive .section.active .album {
+      transform: scale(1) translateX(0vw) translateY(0);
+  }
+
+  nav, nav:hover {
+    width: 100vw;
+    height: 50vh;
+    opacity: 0;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    padding-top: 0;
+    margin-top: 95px;
+    pointer-events: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  nav {
+    transform: translateY(20vh);
+    overflow: hidden;
+  }
+
+  .navActive nav, .navActive h3 {
+    transform: translateY(0);
+    height: calc(100vh - 100px);
+  }
+
+  .navActive nav {
+    margin-top: 100px;
+    pointer-events: all;
+    overflow: scroll;
+    z-index: 99999;
+  }
+
+  #space {
+    width: 100%;
+    height: 80px;
+  }
+
+  #fullpage, #albumMockup, #prev, #play, #next {
+    transition: .3s ease-in-out all !important;
+  }
+
+  .section {
+    transition: opacity 1s ease-in-out;
+  }
+
+  .navActive #fullpage, .navActive #prev, .navActive #play, .navActive #next {
+    transform: translateY(-20vh)!important;
+    transition: .3s ease-in-out all;
+    opacity: 0;
+  }
+
+  .navActive nav, .navActive h3 {
+    opacity: 1;
+  }
+
+  h3 {
+    top: 45px;
+    left: 15px;
+    transform: translateY(0px)!important;
+    transition: .3s ease-in-out!important;
+  }
+
+  .navActive header {
+    position: absolute;
+    z-index: 99999;
+  }
+
+  nav li {
+    opacity: 0;
+  }
+
+  nav li, .navActive li, nav:hover li:not(:hover), nav:hover li:hover, .nav:hover li {
+    width: 45vw;
+    height: 45vw;
+    display: inline-block;
+    margin: -.25vh 0 3vw 3vw!important;
+    overflow: visible;
+    position: relative;
+    opacity: 1;
+    box-shadow: none;
+  }
+
+  nav li span, #info {
+    display: none!important;
+  }
+
+  nav a {
+    text-decoration: none;
+  }
+
+  .mogwaiNav {
+    background: url('media/covers/mogwai.jpg');
+    background-size: contain;
+  }
+  .odeszaNav {
+    background: url('media/covers/odesza.jpg');
+    background-size: contain;
+  }
+  .vinceNav {
+    background: url('media/covers/vince.jpg');
+    background-size: contain;
+  }
+  .brandnewNav {
+    background: url('media/covers/brandnew.jpg');
+    background-size: contain;
+  }
+  .dannybrownNav {
+    background: url('media/covers/dannybrown.jpg');
+    background-size: contain;
+  }
+  .pinkfloydNav {
+    background: url('media/covers/pinkfloyd.jpg');
+    background-size: contain;
+  }
+  .sunsofthymeNav {
+    background: url('media/covers/sunsofthyme.jpg');
+    background-size: contain;
+  }
+  .radicalfaceNav {
+    background: url('media/covers/radicalface.jpg');
+    background-size: contain;
+  }
+  .pupNav {
+    background: url('media/covers/pup.jpg');
+    background-size: contain;
+  }
+  .twdyNav {
+    background: url('media/covers/thiswilldestroyyou.jpg');
+    background-size: contain;
+  }
+
+  /* z index fixing */
+
+  .album {
+    display: none;
+  }
+
+
+  .section.active .album,
+  body.fp-viewing-mogwai #pupp .album,
+  body.fp-viewing-pup #mogwaii .album, body.fp-viewing-pup #thiswilldestroyyouu .album,
+  body.fp-viewing-thiswilldestroyyou #pupp .album, body.fp-viewing-thiswilldestroyyou #odeszaa .album,
+  body.fp-viewing-odesza #thiswilldestroyyouu .album, body.fp-viewing-odesza #brandneww .album,
+  body.fp-viewing-brandnew #odeszaa .album, body.fp-viewing-brandnew #dannybrownn .album,
+  body.fp-viewing-dannybrown #brandneww .album, body.fp-viewing-dannybrown #pinkfloydd .album,
+  body.fp-viewing-pinkfloyd #dannybrownn .album, body.fp-viewing-pinkfloyd #sunsofthymee .album,
+  body.fp-viewing-sunsofthyme #pinkfloydd .album, body.fp-viewing-sunsofthyme #radicalfacee .album,
+  body.fp-viewing-radicalface #sunsofthymee .album, body.fp-viewing-radicalface #vincee .album,
+  body.fp-viewing-vince #radicalfacee .album {
+    display: inline;
+  }
+  .section.active .album {
+  }
+  #mogwaii {z-index: 99;} #pupp {z-index: 98;} #thiswilldestroyyouu {z-index: 97;} #odeszaa{z-index: 96;} #brandneww {z-index: 95;} #dannybrownn {z-index: 94;} #pinkfloydd {z-index: 93;} #sunsofthymee {z-index: 92;} #radicalfacee {z-index: 91;}
+  #vincee {z-index: 90;}
+  header { z-index: 999; }
+}
+
+
+/* iPhone ++++ */
+
+@media (max-width: 414px) and (min-width: 376px) {
+  #burger, #close, h1 {
+    top: 3.5vh;
+  }
+
+  h2 {
+    bottom: 16vh;
+  }
+
+  #play, #pause {
+    bottom: 3vh;
+  }
+
+  #next, #prev {
+    bottom: 7vh;
+  }
+
+  #albumMockup {
+    top: -10.5vh;
+  }
+}
+
+/* iPhone 5 and below */
+
+@media (max-width: 321px) {
+  #burger, #close, h1  {
+    top: 1.5vh;
+    }
+
+    #next, #prev {
+    bottom: 4.5vh;
+    }
+    #next { margin-right: -95px; }
+    #prev { margin-right: 50px; }
+
+    #play, #pause {
+    bottom: -1vh;
+    }
+
+    h2 {
+      bottom: 12.5vh;
+    }
+
+    h1, h2 {
+      font-size: 20px; letter-spacing: .6px;
+    }
+
+    h3 {
+      top: 40px;
+    }
+
+    nav, nav:hover {
+      margin-top: 90px;
+    }
+
+    .albumName {font-size: 18px;}
+}
+/* chrome mobile ios */
+
+@media (max-width: 480px) and (max-aspect-ratio: 640/980) {
+    h2 {
+      bottom: 18vh;
+    }
+    #play, #pause {
+      bottom: 3vh;
+    }
+    #next, #prev {
+      bottom: 7.5vh;
+    }
+}
+
+@media (max-width: 321px) and (max-aspect-ratio: 640/980) {
+
+    #play, #pause {
+      bottom: 2vh;
+    }
+
+}
+
+/* Preloader */
+#preloader {
+	position: fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	background: #C50138; /* change if the mask should have another color then white */
+	z-index:9999999; /* makes sure it stays on top */
+}
+
+#status {
+	width:200px;
+	height:200px;
+	position:absolute;
+	left:50%; /* centers the loading animation horizontally one the screen */
+	top:50%; /* centers the loading animation vertically one the screen */
+	background-image:url('media/loader.gif'); /* path to your loading animation */
+	background-repeat:no-repeat;
+	background-position:center;
+	margin:-100px 0 0 -100px; /* is width and height divided by two */
+}
