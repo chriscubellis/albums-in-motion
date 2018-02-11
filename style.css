@@ -849,6 +849,7 @@ body.navActive #radicalfaceBirds {
 
   .section {
     transition: opacity 1s ease-in-out;
+    height: auto!important;
   }
 
   .navActive #fullpage, .navActive #prev, .navActive #play, .navActive #next {
@@ -1024,6 +1025,7 @@ body.navActive #radicalfaceBirds {
 
     .albumName {font-size: 18px;}
 }
+
 /* chrome mobile ios */
 
 @media (max-width: 480px) and (max-aspect-ratio: 640/980) {
